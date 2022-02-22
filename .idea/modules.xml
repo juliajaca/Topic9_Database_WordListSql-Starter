@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WordListSql-Starter.iml" filepath="$PROJECT_DIR$/WordListSql-Starter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WordListSql-Starter.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WordListSql-Starter.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topic9_Database_WordListSql-Starter.iml" filepath="$PROJECT_DIR$/.idea/modules/Topic9_Database_WordListSql-Starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Topic9_Database_WordListSql-Starter.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Topic9_Database_WordListSql-Starter.app.iml" />
     </modules>
   </component>
 </project>

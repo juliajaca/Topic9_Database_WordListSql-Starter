@@ -89,8 +89,10 @@ public class WordListOpenHelper  extends SQLiteOpenHelper {
             }
             cursor = mReadableDB.rawQuery(query, null);
             cursor.moveToFirst();
-            entry.setId(cursor.getInt(cursor.getColumnIndex(KEY_ID)));
-            entry.setWord(cursor.getString(cursor.getColumnIndex(KEY_WORD)));
+            int id1 =  cursor.getColumnIndex(KEY_ID);
+            entry.setId(cursor.getInt(id1));
+            int id2 =  cursor.getColumnIndex(KEY_WORD);
+            entry.setWord(cursor.getString(id2));
         } catch (Exception e) {
             Log.d(TAG, "QUERY EXCEPTION! " + e.getMessage());
         } finally {
@@ -151,5 +153,25 @@ public class WordListOpenHelper  extends SQLiteOpenHelper {
             Log.d (TAG, "UPDATE EXCEPTION! " + e.getMessage());
         }
         return mNumberOfRowsUpdated;
+    }
+
+    public Cursor search(String word) {
+
+            String[] columns = new String[]{KEY_WORD};
+            word = "%" + word + "%";
+            String where = KEY_WORD + " LIKE ?";
+            String[]whereArgs = new String[]{word};
+
+            Cursor cursor = null;
+
+            try {
+                if (mReadableDB == null) {mReadableDB = getReadableDatabase();}
+                cursor = mReadableDB.query(WORD_LIST_TABLE, columns, where, whereArgs, null, null, null);
+            } catch (Exception e) {
+                Log.d(TAG, "SEARCH EXCEPTION! " + e);
+            }
+
+            return cursor;
+
     }
 }
